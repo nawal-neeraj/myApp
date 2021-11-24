@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import './Questions.dart';
+import './quiz.dart';
+import './result.dart';
 
 // void main() {
 //   runApp(myApp());
@@ -16,52 +17,47 @@ class myApp extends StatefulWidget {
 
 class _myAppState extends State<myApp> {
   var _questionIndex = 0;
-  void questionAns() {
+  var _totalScore = 0;
+  final _question = const [
+    {
+      'questionText': 'what\'s your fav color?',
+      'answer': [{'text':'Black', 'score':4}, {'text':'Red', 'score':2}, {'text':'Green', 'score':5}, {'text':'Blue','score':8}]
+    },
+    {
+      'questionText': 'what\'s your fav animal?',
+      'answer': [{'text':'Tiger', 'score':5}, {'text':'Rabbite', 'score':4}, {'text':'Dog', 'score':8}, {'text':'Lion', 'score':7}]
+    },
+    {
+      'questionText': 'what\'s your fav Programming Language?',
+      'answer': [{'text':'C', 'score':4}, {'text':'C++', 'score':5}, {'text':'JAVA','score':6}, {'text':'JAVASCRIPT', 'score':7}]
+    },
+  ];
+  void _questionAns(int score) {
+    _totalScore += score;
     setState(() {
       _questionIndex = _questionIndex + 1;
     });
-    print(_questionIndex);
   }
 
-  qestionAndP(questions) {
-    print(_questionIndex);
+  void _resetQuiz(){
     setState(() {
-      if (_questionIndex <= questions.length - questions.length) {
-        _questionIndex = 0;
-      } else {
-        _questionIndex = _questionIndex - 1;
-      }
+      _questionIndex = 0;
+      _totalScore = 0;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    var questions = [
-      'what\'s your fav color?',
-      'what\'s your fav animal?',
-    ];
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: Text('My App'),
         ),
-        body: Column(
-          children: [
-            Questions(questions[_questionIndex]),
-            RaisedButton(
-              child: Text('Next'),
-              onPressed: questionAns,
-            ),
-            RaisedButton(
-              child: Text('Previous'),
-              onPressed: () =>  qestionAndP(questions),
-            ),
-            // RaisedButton(
-            //   child: Text('Test2'),
-            //   onPressed: () => {print('Answer3')},
-            // ),
-          ],
-        ),
+        body: 
+        _questionIndex < _question.length
+            ? 
+            quiz(answerQuestion: _questionAns,  question: _question, questionIndex: _questionIndex )
+            : result(_totalScore, _resetQuiz),
       ),
     );
   }
