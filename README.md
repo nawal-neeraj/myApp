@@ -6,18 +6,18 @@ A new Flutter project.
 
 ### Setting up the flutter environment on your local (Ubuntu).
 
-Install snap:
+1. Install snap:
   - sudo apt update
   - sudo apt install snapd
 
-[Install Flutter Using Snap](https://docs.flutter.dev/get-started/install/linux)
+2. [Install Flutter Using Snap](https://docs.flutter.dev/get-started/install/linux)
  - sudo snap install flutter --classic
  - flutter sdk-path (Run this command after installing flutter)
  - flutter doctor
 
-Output (If yoy dont have Android Studio):
+3. Output (If yoy dont have Android Studio go to 5th point):
 
-Android toolchain - develop for Android devices
+4. Android toolchain - develop for Android devices
  - Android SDK at /Users/obiwan/Library/Android/sdk
  - [✗ Android SDK is missing command line tools; download from](https://goo.gl/XxQghQ)
  - Try re-installing or updating your Android SDK,
@@ -25,8 +25,10 @@ Android toolchain - develop for Android devices
 
 
 
-[Install Android Studio using Snap](https://snapcraft.io/android-studio):
+5. [Install Android Studio using Snap](https://snapcraft.io/android-studio):
  - sudo snap install android-studio --classic
 
 
-Install missing Android SDK from Android Studio
+6. Install missing Files from Android Studio SDK Manager
+ - Android SDK
+ - Google Play Service
