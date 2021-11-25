@@ -15,7 +15,7 @@ A new Flutter project.
     - flutter sdk-path (Run this command after installing flutter)
     - flutter doctor
 
-3. Output (If yoy dont have Android Studio go to 5th point):
+3. Output (If yoy dont have installed Android Studio):
 
   Android toolchain - develop for Android devices
     - Android SDK at /Users/obiwan/Library/Android/sdk
