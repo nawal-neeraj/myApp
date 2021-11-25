@@ -16,13 +16,16 @@ Install snap:
  - flutter doctor
 
 Output (If yoy dont have Android Studio):
- Android toolchain - develop for Android devices
-    • Android SDK at /Users/obiwan/Library/Android/sdk
-    ✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ
-    • Try re-installing or updating your Android SDK,
-      visit https://docs.flutter.dev/setup/#android-setup for detailed instructions.
 
-Install Android Studio:
+ Android toolchain - develop for Android devices
+    -  Android SDK at /Users/obiwan/Library/Android/sdk
+    - ✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ
+    -  Try re-installing or updating your Android SDK,
+    -  visit https://docs.flutter.dev/setup/#android-setup for detailed instructions.
+
+
+[Install Android Studio using Snap](https://snapcraft.io/android-studio):
  - sudo snap install android-studio --classic
- 
-Install missing Android SDK from Android Studio 
+
+
+Install missing Android SDK from Android Studio
